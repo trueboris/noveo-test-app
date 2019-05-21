@@ -25,9 +25,7 @@ const Explorer = props => (
               : null;
 
             const handleFolderClick = () =>
-              props.history.push(
-                `${paths.explorer}/${encodeURIComponent(item.path)}`
-              );
+              props.history.push(`${paths.explorer}/${item.path}`);
 
             const handleItemClick =
               item.type === "dir" ? handleFolderClick : () => void {};
@@ -74,12 +72,9 @@ const lifecycleEnhancer = lifecycle({
     if (this.props.location.pathname !== prevProps.location.pathname) {
       // disc path excluding app path
       const discLocationPath =
-        this.props.location.pathname.slice(17) || paths.root;
+        this.props.location.pathname.slice(15) || paths.root;
 
-      this.props.requestDiscInfo(
-        this.props.token,
-        decodeURIComponent(discLocationPath)
-      );
+      this.props.requestDiscInfo(this.props.token, discLocationPath);
     }
   }
 });
