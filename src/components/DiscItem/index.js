@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const classNamesForItemIcons = {
-  file: "fas fa-file",
-  dir: "fas fa-folder"
+  file: "fas fa-file text-muted",
+  dir: "fas fa-folder text-muted"
 };
 
 const classNamesForItemNames = {
