@@ -2,14 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { compose, lifecycle } from "recompose";
+import Spinner from "../Spinner";
 import { setToken, setTokenError, requestDiscInfo } from "../../actions";
 import { paths } from "../../config";
 
-const Login = props => (
-  <div className="spinner-border" role="status">
-    <span className="sr-only">Loading...</span>
-  </div>
-);
+const Login = () => <Spinner />;
 
 const connectEnhancer = connect(
   state => ({ token: state.user.token }),
